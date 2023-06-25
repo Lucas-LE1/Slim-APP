@@ -8,6 +8,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
+use App\Controllers\TaskController;
 
 return function (App $app) {
     $app->options('/{routes:.*}', function (Request $request, Response $response) {
@@ -23,5 +24,13 @@ return function (App $app) {
     $app->group('/users', function (Group $group) {
         $group->get('', ListUsersAction::class);
         $group->get('/{id}', ViewUserAction::class);
+    });
+
+    $app->group('/to-do', function (Group $group) {
+        $group->get('/',TaskController::class . ":getAllTasks");
+        $group->get('/{id}', TaskController::class . ':getTaskById');
+        $group->post('/add', TaskController::class . ':addTask');
+        $group->put('/alter/{id}', TaskController::class . ':alterTask');
+        $group->delete('/delete/{id}', TaskController::class . ':deleteTask');
     });
 };

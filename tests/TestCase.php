@@ -62,6 +62,8 @@ class TestCase extends PHPUnit_TestCase
     }
 
     /**
+     * createRequest
+     * 
      * @param string $method
      * @param string $path
      * @param array  $headers

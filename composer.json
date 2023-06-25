@@ -7,18 +7,12 @@
         "router",
         "psr7"
     ],
-    "homepage": "http://github.com/slimphp/Slim-Skeleton",
+
     "license": "MIT",
     "authors": [
         {
-            "name": "Josh Lockhart",
-            "email": "info@joshlockhart.com",
-            "homepage": "http://www.joshlockhart.com/"
-        },
-        {
-            "name": "Pierre Berube",
-            "email": "pierre@lgse.com",
-            "homepage": "http://www.lgse.com/"
+            "name": "Lucas Eduardo ",
+            "email": "ls.eduardo.tb@gmail.com"
         }
     ],
     "require": {
